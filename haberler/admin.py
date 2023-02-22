@@ -5,7 +5,7 @@ from django.contrib.sessions.models import Session
 # Register your models here.
 
 
-#admin.site.register(Offenlage)
+#admin.site.register(Offenlage) 
 
 @admin.register(Offenlage)
 class OffenlageAdmin(LeafletGeoAdmin):
