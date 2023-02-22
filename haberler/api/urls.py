@@ -1,6 +1,6 @@
 from django.urls import path
 from haberler.api import views as api_views
-
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 urlpatterns = [
     
 
@@ -12,3 +12,4 @@ urlpatterns = [
  
 ]
 
+urlpatterns += staticfiles_urlpatterns()

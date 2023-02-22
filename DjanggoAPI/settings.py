@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+import dj_database_url
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +27,7 @@ SECRET_KEY = 'django-insecure-5j%9^ij3=-oh^^ju&d^(7aqrsdki#72d1@o(v(*dllvy9xzqdg
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -88,7 +90,7 @@ WSGI_APPLICATION = 'DjanggoAPI.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
+""" DATABASES = {
      'default': {
      'ENGINE': 'django.contrib.gis.db.backends.postgis',
          'NAME': 'offenlagen',
@@ -96,8 +98,7 @@ DATABASES = {
          'PASSWORD' : 'postgres',
          'HOST' : 'vmlxows.lvermgeo.vermkv',
          'PORT' : '5432'
-      }
-
+      } 
 
 
 
@@ -106,8 +107,14 @@ DATABASES = {
 #        'NAME': BASE_DIR / 'db.sqlite3',
 #    }
 
-}
+}"""
 
+""" 
+DATABASES = {
+     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+      } """
+
+DATABASES = {'default': dj_database_url.config(default='postgres://offenlagen_user:RMIo1FK3nF4kBI2T6W1QsmnfmlrJMvrY@dpg-cfr0r49gp3joa8heu170-a.oregon-postgres.render.com/offenlagen')}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -146,6 +153,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = 'media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
