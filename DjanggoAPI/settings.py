@@ -109,12 +109,12 @@ WSGI_APPLICATION = 'DjanggoAPI.wsgi.application'
 
 }"""
 
-""" 
+ 
 DATABASES = {
      'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
-      } """
+      } 
 
-DATABASES = {'default': dj_database_url.config(default='postgres://offenlagen_user:RMIo1FK3nF4kBI2T6W1QsmnfmlrJMvrY@dpg-cfr0r49gp3joa8heu170-a.oregon-postgres.render.com/offenlagen')}
+#DATABASES = {'default': dj_database_url.config(default='postgres://offenlagen_user:RMIo1FK3nF4kBI2T6W1QsmnfmlrJMvrY@dpg-cfr0r49gp3joa8heu170-a.oregon-postgres.render.com/offenlagen')}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
